@@ -1,0 +1,29 @@
+module choiceCaseTest {
+	yang-version 1;
+	namespace "http://huawei.com";
+	prefix Ant;
+
+
+
+     typedef my-type {
+       status deprecated;
+       type int32;
+     }
+
+     leaf my-leaf {
+       status current;
+       type my-type; // illegal, since my-type is deprecated
+     }
+    
+
+	container link {
+    		choice interfaceType {
+        		case ethernerType {
+            		leaf ethernet { type string; }
+        		}
+        		case p2pType {
+            		leaf p2p { type string; }
+        		}
+    		}
+	}
+}

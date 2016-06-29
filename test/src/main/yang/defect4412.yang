@@ -1,0 +1,7 @@
+module AAAAAAAAAAAAAAAAA {
+     yang-version 1;
+     namespace "http://huawei.com";
+     prefix Ant;
+     description "Interval before a route is declared invalid";
+
+}

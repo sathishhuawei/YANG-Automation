@@ -1,0 +1,155 @@
+module ospf {
+     namespace "urn:cisco:params:xml:ns:yang:ospf";
+     // replace with IANA namespace when assigned
+     prefix ospf;
+      revision 2020-10-20 {
+       description
+         "Initial revision.";
+     }
+
+
+
+
+
+
+
+/*YANG file error: Unable to find base typedef/grouping for given type/uses - result Nok
+leaf enabled1 {
+type xxx;
+}*/
+
+
+/*leaf enabled {
+type boolean;
+}*/
+
+/* leaf type empty - NOK
+leaf abc {
+type empty;
+ }*/
+
+        /*leaf type enumeration - NOK*/
+       leaf ifType {
+        type enumeration {
+             /* double quotes not working
+             enum seven {
+                 value  "123";
+             }*/            
+             enum "unbounded";
+             enum ZERO;
+             enum two;
+             enum four;
+
+
+         }
+     }
+
+
+leaf two { 
+type int16;
+}
+leaf three { 
+type int32;
+}
+leaf four { 
+type int64;
+}
+
+leaf five { 
+type string;
+}
+leaf six { 
+type uint8;
+}
+leaf seven { 
+type uint16;
+}
+leaf eight { 
+type uint32;
+}
+leaf nine { 
+type uint64;
+}
+
+
+
+
+leaf ninefive { 
+type string;
+}
+
+
+
+/* leaf ten { 
+type leafref;
+} */
+
+    leaf eleven {
+       type union {
+            /*type int8;
+            type int16;
+            type int32;
+            type int64;
+            type uint8;
+            type uint16;
+            type uint32;
+            type uint64;
+            type string;
+            type binary;*/
+            type union {
+                type int8;
+               }
+	        //type boolean;
+
+       }
+    } 
+
+   typedef abc-def {
+     //type int32;
+            type union {
+            /*type int8;
+            type int16;
+            type int32;
+            type int64;
+            type uint8;
+            type uint16;
+            type uint32;
+            type uint64;
+            type string;
+            type binary;*/
+            type union {
+                type int8;
+               }
+            //type boolean;
+
+       }
+    }
+
+
+list a {
+    min-elements "7" + "7";
+    config false;
+    leaf anhc {
+        type string;
+         }
+}
+
+
+
+    leaf xyz {
+     type union {
+         type int32;
+         type abc-def;
+         type enumeration {
+             enum "unbounded";
+             enum ZERO;
+         enum two;
+             enum four;
+         }
+         }
+       }
+
+
+
+
+}

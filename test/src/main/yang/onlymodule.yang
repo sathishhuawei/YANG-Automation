@@ -1,0 +1,16 @@
+module link {
+    yang-version 1;
+    namespace http://huawei.com;
+    prefix Ant;
+
+
+        choice interfaceType {
+            case ethernerType {
+                leaf ethernet { type string; }
+        	}
+        	case p2pType {
+               leaf p2p { type string; }
+        	}
+        }
+     	
+}
